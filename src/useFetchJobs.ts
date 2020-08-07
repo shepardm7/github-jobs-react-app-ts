@@ -23,7 +23,7 @@ interface ActionUpdateHasNextPage {
 
 type ActionTypes = ActionMakeRequest | ActionGetData | ActionError | ActionUpdateHasNextPage;
 
-const BASE_URL = 'https://thingproxy.freeboard.io/fetch/https://jobs.github.com/positions.json/';
+const BASE_URL = `${process.env.NODE_ENV === 'development' ? 'https://thingproxy.freeboard.io/fetch/' : 'https://cors-anywhere.herokuapp.com/'}https://jobs.github.com/positions.json/`;
 
 type StateType = {
   jobs: Job[];
